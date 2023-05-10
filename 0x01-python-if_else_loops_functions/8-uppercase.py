@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 def uppercase(str):
-    result = ""
-    for c in str:
-        if c.isalpha():
-            result += "{:s}".format(chr(ord(c) - 32))
+    for x in range(len(str)):
+        if ord(str[x]) >= 97 and ord(str[x]) < 123:
+            toconvert = 32
         else:
-            result += c
-    print("{:s}".format(result)
+            toconvert = 0
+        print("{:c}".format(ord(str[x]) - toconvert), end='')
+    print()
