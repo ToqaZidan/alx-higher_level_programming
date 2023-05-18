@@ -2,8 +2,8 @@
 
 if __name__ == "__main__":
     """
-    A program that imports all functions from the file calculator_1.py
-    and handles basic operations.
+    A program that imports all functions from the file
+    calculator_1.py and handles basic operations.
     """
     from calculator_1 import add, sub, mul, div
     import sys
