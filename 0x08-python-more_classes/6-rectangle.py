@@ -6,6 +6,9 @@
 class Rectangle:
     """
     Intialize a rectangle class
+
+    Attributes:
+    instances_num (int): The number of Rectangle instances.
     """
     instances_num = 0
 
@@ -22,7 +25,7 @@ class Rectangle:
 
         self.width = width
         self.height = height
-        Rectangle.instances_num += 1
+        type(self).instances_num += 1
 
     def __del__(self):
         """
@@ -30,7 +33,8 @@ class Rectangle:
         Prints a message when an instance of Rectangle is deleted
 
         """
-        Rectangle.instances_num -= 1
+
+        type(self).instances_num -= 1
         print('Bye rectangle...')
 
     @property
