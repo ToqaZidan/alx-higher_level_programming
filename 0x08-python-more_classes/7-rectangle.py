@@ -9,8 +9,10 @@ class Rectangle:
 
     Attributes:
     instances_num (int): The number of Rectangle instances.
+    print_symbol (any): The symbol used for string representation
     """
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """
@@ -210,7 +212,7 @@ class Rectangle:
 
         for i in range(height):
             for j in range(width):
-                str += '#'
+                str += str(self.print_symbol)
 
             if i != height - 1:
                 str += '\n'
