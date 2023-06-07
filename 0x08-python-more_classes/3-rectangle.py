@@ -181,26 +181,26 @@ class Rectangle:
         Draw the Rectangle with defined sizes
 
         Returns:
-            str: `Empty` If width or height == `0`,
+            str_r: `Empty` If width or height == `0`,
             otherwise returns a string with the Rectangle.
 
         """
 
-        str = ''
+        str_r = ''
         width = self.__width
         height = self.__height
 
         if width == 0 or height == 0:
-            return str
+            return str_r
 
         for i in range(height):
             for j in range(width):
-                str += '#'
+                str_r += '#'
 
             if i != height - 1:
-                str += '\n'
+                str_r += '\n'
 
-        return str
+        return str_r
 
     def __str__(self):
         """
