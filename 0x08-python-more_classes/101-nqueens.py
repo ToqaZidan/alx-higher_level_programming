@@ -56,7 +56,7 @@ class Nqueens:
 if __name__ == "__main__":
     # Check the number of arguments
     if len(sys.argv) == 0 or len(sys.argv) == 1:
-        print("Usage: nqueens.py N")
+        print("Usage: nqueens N")
         sys.exit(1)
 
     # Check if N is an integer
