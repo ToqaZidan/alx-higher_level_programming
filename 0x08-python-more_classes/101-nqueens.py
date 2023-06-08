@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import sys
 
 class Nqueens:
@@ -75,3 +76,4 @@ if __name__ == "__main__":
     # Print the results
     for result in results:
         print(result)
+
