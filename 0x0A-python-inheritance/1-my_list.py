@@ -6,7 +6,7 @@ A module that prints a list in sorted order
 
 class MyList(list):
     """
-    Initialize Dervied class
+    Initialize Derived class
     """
 
     def print_sorted(self):
@@ -16,4 +16,3 @@ class MyList(list):
 
         if issubclass(MyList, list):
             print(sorted(self))
-
