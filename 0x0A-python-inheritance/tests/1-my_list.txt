@@ -13,7 +13,7 @@ Write a class MyList that inherits from list:
 
     * You can assume that all the elements of the list will be of type int
 
-Section // No exceptions
+Section // Test cases
 =========================
 
 Test case #1: A test case for a empty list
@@ -98,9 +98,6 @@ Test case #5: A test case for do nothing
     >>> print(my_list)
     [-5, -4, -3, -2, -1]
 
-
-Section // Attribute Errors
-============================
 
 Test case #6: A invalid test case of tuples
 
