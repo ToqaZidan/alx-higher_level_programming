@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+""" A module that look up a function"""
 
 def lookup(obj):
     """
