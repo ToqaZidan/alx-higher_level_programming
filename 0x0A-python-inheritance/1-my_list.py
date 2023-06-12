@@ -13,6 +13,4 @@ class MyList(list):
         """
         Sort a list and print it
         """
-
-        if issubclass(MyList, list):
-            print(sorted(self))
+        print(sorted(self))
