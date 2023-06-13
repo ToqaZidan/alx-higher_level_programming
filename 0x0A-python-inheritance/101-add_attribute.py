@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """A module for adding new attribute to an object"""
+
+
 def add_attribute(obj, attr, value):
     """
     Adds a new attribute to an object if it's possible.
@@ -12,7 +14,6 @@ def add_attribute(obj, attr, value):
     Raises:
         TypeError: If the object already has the attribute.
     """
-    if hasattr(obj, attr):
+    if not hasattr(obj, "__dict__"):
         raise TypeError("can't add new attribute")
-    else:
-        setattr(obj, attr, value)
+    setattr(obj, att, value)
