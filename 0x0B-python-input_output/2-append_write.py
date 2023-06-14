@@ -1,20 +1,17 @@
 #!/usr/bin/python3
-"""
-Define a function that append a string to a text file
-"""
+"""A module to Define a file-appending function."""
 
 
-def write_file(filename="", text=""):
+def append_write(filename="", text=""):
     """
-    Function that append without truncate textfile
-    if it was found, creat it if it was not found.
+    A function to Appends a string
+    to the end of a UTF8 text file.
 
     Args:
-        filename: file to be written over.
-        text: text to be written.
-
-    Return:
-        number of characters written.
+        filename (str): The name of the file to append to.
+        text (str): The string to append to the file.
+    Returns:
+        The number of characters appended.
     """
-    with open(filename, "a", encoding="UTF-8") as new_file:
+    with open(filename, "a", encoding="utf-8") as new_file:
         return new_file.write(text)
