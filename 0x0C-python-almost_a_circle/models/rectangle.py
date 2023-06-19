@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """A Rectangle module base on super class Base"""
-from model.Base import Base:
+from model.Base import Base
 
 
 class Rectangle(Base):
