@@ -24,7 +24,7 @@ class Base:
         Initialize the class consturctor
 
         Args:
-        id (int): The identity of new base 
+        id (int): The identity of new base
         """
         if id is None:
             Base.__nb_objects += 1
@@ -35,8 +35,9 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """
-        Update the class Base by adding the static method `def to_json_string(list_dictionaries)`.
-        
+        Update the class Base by adding the static method
+        `def to_json_string(list_dictionaries)`.
+
         Args:
         list_dictionaries: is a list of dictionaries
 
@@ -46,10 +47,9 @@ class Base:
         """
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return '[]'
-        
+
         return json.dumps(list_dictionaries)
-    
-    
+
     @classmethod
     def save_to_file(cls, list_objs):
         """
@@ -63,14 +63,14 @@ class Base:
         with open(filename, mode="w", encoding='utf-8') as jsonfile:
             if list_objs is None:
                 return jsonfile.write(cls.to_json_string(None))
-            
-            attrs =[]
+
+            attrs = []
 
             for element in list_objs:
                 attrs.append(element.to_dictionary())
 
                 return jsonfile.write(cls.to_json_string(attrs))
-            
+
     @staticmethod
     def from_json_string(json_string):
         """
@@ -86,7 +86,7 @@ class Base:
         if json_string is None or len(json_string) == 0:
             return []
         return json.loads(json_string)
-    
+
     @classmethod
     def create(cls, **dictionary):
         """
@@ -103,7 +103,6 @@ class Base:
 
         dummy.update(**dictionary)
         return dummy
-    
 
     @classmethod
     def load_from_file(cls):

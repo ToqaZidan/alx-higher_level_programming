@@ -47,9 +47,9 @@ class Rectangle(Base):
             ValueError: If `value` is less than `0`.
         """
         if type(value) != int:
-                    raise TypeError("width must be an integer")
+            raise TypeError("width must be an integer")
         if value <= 0:
-                    raise ValueError("width must be > 0")
+            raise ValueError("width must be > 0")
 
         self.__width = value
 
@@ -73,9 +73,9 @@ class Rectangle(Base):
             ValueError: If `value` is less than `0`.
         """
         if type(value) != int:
-                    raise TypeError("height must be an integer")
+            raise TypeError("height must be an integer")
         if value <= 0:
-                    raise ValueError("height must be > 0")
+            raise ValueError("height must be > 0")
 
         self.__height = value
 
@@ -99,9 +99,9 @@ class Rectangle(Base):
             ValueError: If `value` is less than `0`.
         """
         if type(value) != int:
-                    raise TypeError("x must be an integer")
+            raise TypeError("x must be an integer")
         if value < 0:
-                    raise ValueError("x must be >= 0")
+            raise ValueError("x must be >= 0")
 
         self.__x = value
 
@@ -126,9 +126,9 @@ class Rectangle(Base):
             ValueError: If `value` is less than `0`.
         """
         if type(value) != int:
-                    raise TypeError("y must be an integer")
+            raise TypeError("y must be an integer")
         if value < 0:
-                    raise ValueError("y must be >= 0")
+            raise ValueError("y must be >= 0")
 
         self.__y = value
 
@@ -140,7 +140,7 @@ class Rectangle(Base):
             The Area of Rectangle
         """
         return self.height * self.width
-    
+
     def display(self):
         """
 
@@ -159,20 +159,18 @@ class Rectangle(Base):
 
             print('#' * self.__width)
 
-        def __str__(self):
-           """
-           Return the string representation of the rectangle.
-           """
-        return '[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}'.format(
+    def __str__(self):
+        """
+        Return the string representation of the rectangle.
+        """
+    return '[Rectangle] ({}) {}/{} - {}/{}'.format(
             self.id, self.x, self.y, self.width, self.height
-        )
-    
+            )
 
-           
     def update(self, *args, **kwargs):
         """
-        Update the class Rectangle by adding the public method def update(self, *args)
-        that assigns an argument to each attribute.
+        Update the class Rectangle by adding the public method
+        def update(self, *args) that assigns an argument to each attribute.
 
         1st argument:  id attribute
         2nd argument:  width attribute
