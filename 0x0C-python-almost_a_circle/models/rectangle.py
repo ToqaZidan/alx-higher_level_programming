@@ -163,7 +163,7 @@ class Rectangle(Base):
         """
         Return the string representation of the rectangle.
         """
-    return '[Rectangle] ({}) {}/{} - {}/{}'.format(
+        return '[Rectangle] ({}) {}/{} - {}/{}'.format(
             self.id, self.x, self.y, self.width, self.height
             )
 
