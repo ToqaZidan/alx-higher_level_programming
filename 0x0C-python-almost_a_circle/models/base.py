@@ -106,7 +106,8 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """Return a list of classes instantiated from a file of JSON strings.
+        """
+        Return a list of classes instantiated from a file of JSON strings.
 
         Returns:
             If the file does not exist - an empty list.
@@ -116,16 +117,17 @@ class Base:
         try:
             with open(filename, mode="r", encoding='utf-8') as jsonfile:
                 list_dicts = Base.from_json_string(jsonfile.read())
-                return [cls.create(**d) for d in list_dicts]
+                return [cls.create(**dic) for dic in list_dicts]
         except IOError:
             return []
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """Write the CSV serialization of a list of objects to a file.
+        """
+        Write the CSV serialization of a list of objects to a file.
 
         Args:
-            list_objs (list): A list of inherited Base instances.
+            list_objs: A list of inherited Base instances.
         """
         filename = cls.__name__ + ".csv"
         with open(filename, mode="w", newline="") as csvfile:
@@ -142,12 +144,13 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        """Return a list of classes instantiated from a CSV file.
+        """
+        Return a list of classes instantiated from a CSV file.
 
         Reads from `<cls.__name__>.csv`.
 
         Returns:
-            If the file does not exist - an empty list.
+            Empty list If the file does not exist
             Otherwise - a list of instantiated classes.
         """
         filename = cls.__name__ + ".csv"
@@ -159,25 +162,26 @@ class Base:
                     fieldnames = ["id", "size", "x", "y"]
                 list_dicts = csv.DictReader(csvfile, fieldnames=fieldnames)
                 list_dicts = [dict([k, int(v)] for k, v in d.items())
-                              for d in list_dicts]
-                return [cls.create(**d) for d in list_dicts]
+                              for dic in list_dicts]
+                return [cls.create(**dic) for dic in list_dicts]
         except IOError:
             return []
 
     @staticmethod
     def draw(list_rectangles, list_squares):
-        """Draw Rectangles and Squares using the turtle package.
+        """
+        Draw Rectangles and Squares using the turtle package.
 
         Args:
             list_rectangles (list): A list of Rectangle objects to draw.
             list_squares (list): A list of Square objects to draw.
         """
         turt = turtle.Turtle()
-        turt.screen.bgcolor("#b7312c")
+        turt.screen.bgcolor("#deb1af")
         turt.pensize(4)
         turt.shape("turtle")
 
-        turt.color("#ffffff")
+        turt.color("#000000")
         for rect in list_rectangles:
             turt.showturtle()
             turt.up()
@@ -190,7 +194,7 @@ class Base:
                 turt.left(90)
             turt.hideturtle()
 
-        turt.color("#b5e3d8")
+        turt.color("#ff0000")
         for sq in list_squares:
             turt.showturtle()
             turt.up()
