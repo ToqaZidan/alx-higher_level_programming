@@ -1,4 +1,4 @@
-#!/usr/bin/ env node
+#!/usr/bin/node
 // Write a script that prints 3 lines.
 
 let myVar0 = "C is fun";
