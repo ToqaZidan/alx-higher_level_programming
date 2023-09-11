@@ -3,11 +3,10 @@
 /* Write a script that printsarguments passed to it.
 */
 
-const args = process.argv;
-if (args.length === 2) {
-  console.log('No argument');
-} else if (args.length === 3) {
-  console.log(args[2]);
+const firstArg = process.argv[2];
+
+if (firstArg) {
+  console.log(firstArg);
 } else {
-  console.log('Arguments found');
+  console.log('No argument');
 }
