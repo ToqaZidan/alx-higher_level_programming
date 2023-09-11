@@ -1,4 +1,5 @@
 #!/usr/bin/node
+
 /* Write a script that printsarguments passed to it.
 */
 
