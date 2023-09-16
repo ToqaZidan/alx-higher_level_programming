@@ -1,10 +1,11 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """ Script that lists all states from the database hbtn_0e_0_usa """
+
 
 import MySQLdb
 from sys import argv
 
-if __name__ == "__main__":
+if __name__ == '__main__':
 
     """
     Connect to the database using host and port by default
@@ -12,16 +13,16 @@ if __name__ == "__main__":
     db_connect = MySQLdb.connect(
         host="localhost",
         port=3306,
-        userName=argv[1],
-        password=argv[2],
-        database=argv[3]
+        user=argv[1],
+        passwd=argv[2],
+        db=argv[3]
     )
 
     """ Create a object with cursor() method """
     cur = db_connect.cursor()
 
     """ Execute the query """
-    cur.execute("SELECT * FROM STATES")
+    cur.execute("SELECT * FROM states")
 
     """ Fetch all rows in a list of lists """
     states = cur.fetchall()
