@@ -12,7 +12,7 @@ if __name__ == '__main__':
     """Make engine for database"""
     db_link = "mysql+mysqldb://{}:{}@localhost/{}"\
         .format(argv[1], argv[2], argv[3])
-    
+
     """ Make session"""
     engine = create_engine(db_link)
     Session = sessionmaker(bind=engine)

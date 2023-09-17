@@ -14,6 +14,11 @@ Base = declarative_base()
 class State(Base):
     """
     Class definition of a State and an instance
+
+    Attributes:
+        __tablename__: table name
+        id: id of the state (INT)
+        name: name of the state (String)
     """
 
     __tablename__ = 'states'
