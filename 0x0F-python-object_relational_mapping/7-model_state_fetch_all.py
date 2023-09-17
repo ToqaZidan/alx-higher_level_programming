@@ -22,4 +22,4 @@ if __name__ == '__main__':
     """ Query to database """
 
     for state in Session.query(State).order_by(State.id):
-        print("{0} : {1}".format(state.id, state.name))
+        print("{0}: {1}".format(state.id, state.name))
