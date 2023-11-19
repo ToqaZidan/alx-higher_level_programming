@@ -29,4 +29,6 @@ if __name__ == '__main__':
     Session.commit()
     
     Session.close()
-
+    
+    """ Query to database """
+    print("{}".format(new_state.id))

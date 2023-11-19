@@ -25,8 +25,7 @@ if __name__ == '__main__':
     """ Query to database """
 
     state = Session.query(State).filter(State.name == (argv[4]))
-    if state is not None:
-        for state in state:
-            print("{}".format(state.id))
-        else:
-            print("Not found")
+    if state:
+        print("{}".format(state.id))
+    else:
+        print("Not found")

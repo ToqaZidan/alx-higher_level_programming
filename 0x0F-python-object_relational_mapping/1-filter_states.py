@@ -22,7 +22,8 @@ if __name__ == '__main__':
     cur = db_connect.cursor()
 
     """ Execute the query """
-    cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%'\
+                ORDER BY id ASC")
 
     """ Fetch all rows in a list of lists """
     states = cur.fetchall()
