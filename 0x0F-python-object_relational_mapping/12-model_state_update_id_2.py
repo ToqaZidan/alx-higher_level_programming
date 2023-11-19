@@ -24,5 +24,6 @@ if __name__ == '__main__':
 
     """ Query to database """
     State = Session.query(State).filter(id=2).first()
-    State.name = "New Mexico"
+    if State:
+        State.name = "New Mexico"
     Session.commit()

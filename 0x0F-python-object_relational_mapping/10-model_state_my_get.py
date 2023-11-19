@@ -24,11 +24,11 @@ if __name__ == '__main__':
 
     """ Query to database """
 
-    stateName = argv[4]
-    state = Session.query(State).filter(State.name.like(f"%{stateName}%")).all()
+    state_name = argv[4]
+    state = Session.query(State).filter(State.name == state_name)\
+        .first()
 
     if state:
-        for state in state:
-            print("{}".format(state.id))
+        print("{}".format(state.id))
     else:
         print("Not found")
