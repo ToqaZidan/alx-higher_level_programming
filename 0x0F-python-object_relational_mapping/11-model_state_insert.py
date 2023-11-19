@@ -24,11 +24,9 @@ if __name__ == '__main__':
 
     """ Add new state """
 
-    new_state = State(name= "Louisiana")
+    new_state = State(name="Louisiana")
     Session.add(new_state)
     Session.commit()
-    
-    Session.close()
-    
+
     """ Query to database """
     print("{}".format(new_state.id))

@@ -24,8 +24,9 @@ if __name__ == '__main__':
 
     """ Query to database """
 
-    state = Session.query(State).filter(State.name == (argv[4]))
-    if state:
+    state_name = argv[4]
+    states = Session.query(State).filter(State.name == state_name).first()
+    for state in states:
         print("{}".format(state.id))
-    else:
+    if state is None:
         print("Not found")
