@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Script that lists all State objects contatin letter 'a'
-    from the database hbtn_0e_6_usa
+Script that changes the name of a State object
+    in the database hbtn_0e_6_usa
 """
 
 
@@ -23,12 +23,6 @@ if __name__ == '__main__':
     Session = Session()
 
     """ Query to database """
-
-    stateName = argv[4]
-    state = Session.query(State).filter(State.name.like(f"%{stateName}%")).all()
-
-    if state:
-        for state in state:
-            print("{}".format(state.id))
-    else:
-        print("Not found")
+    State = Session.query(State).filter(id=2).first()
+    State.name = "New Mexico"
+    Session.commit()

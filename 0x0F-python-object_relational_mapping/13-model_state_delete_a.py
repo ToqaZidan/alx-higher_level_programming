@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Script that lists all State objects contatin letter 'a'
-    from the database hbtn_0e_6_usa
+Script that Delete a State objects
+    in the database hbtn_0e_6_usa
 """
 
 
@@ -23,12 +23,6 @@ if __name__ == '__main__':
     Session = Session()
 
     """ Query to database """
-
-    stateName = argv[4]
-    state = Session.query(State).filter(State.name.like(f"%{stateName}%")).all()
-
-    if state:
-        for state in state:
-            print("{}".format(state.id))
-    else:
-        print("Not found")
+    state = Session.query(State).filter(State.name.like('%a%')).all()
+    Session.delete(state)
+    Session.commit()
