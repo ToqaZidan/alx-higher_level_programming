@@ -23,6 +23,8 @@ if __name__ == '__main__':
     Session = Session()
 
     """ Query to database """
-    state = Session.query(State).filter(State.name.like('%a%')).all()
-    Session.delete(state)
+    state_del = Session.query(State).filter(State.name.like('%a%')).all()
+    if state_del:
+        for state in state_del:
+            Session.delete(state)
     Session.commit()

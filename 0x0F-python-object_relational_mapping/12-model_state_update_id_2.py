@@ -23,7 +23,7 @@ if __name__ == '__main__':
     Session = Session()
 
     """ Query to database """
-    State = Session.query(State).filter(id=2).first()
-    if State:
+    state_update = Session.query(State).filter(id=2).first()
+    if state_update:
         State.name = "New Mexico"
     Session.commit()
